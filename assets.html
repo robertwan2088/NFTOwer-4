@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资产中心 | NFTOwer-4</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">7</div>
+                NFTOwer-4
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="market.html">市场</a></li>
+                <li><a href="assets.html" class="active">资产中心</a></li>
+                <li><a href="profile.html">个人中心</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline">连接钱包</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="page-header">
+            <h1>资产中心</h1>
+            <p>管理您的数字资产和投资组合</p>
+            <div class="header-actions">
+                <button class="btn btn-outline">💰 充值</button>
+                <button class="btn btn-outline">💸 提现</button>
+                <button class="btn btn-outline">📋 账单</button>
+            </div>
+        </div>
+
+        <!-- Asset Overview -->
+        <section class="asset-overview">
+            <div class="total-asset-card">
+                <div class="asset-header">
+                    <span>总资产估值</span>
+                    <button class="icon-btn">👁</button>
+                </div>
+                <div class="asset-value">293,883.98 USDT</div>
+                <div class="asset-change positive">
+                    <span>↗</span> 今日盈亏 +1,000 USDT (2.34%)
+                </div>
+            </div>
+
+            <div class="asset-chart-card">
+                <div class="chart-header">
+                    <span>资产走势(USDT)</span>
+                    <div class="chart-legend">
+                        <span class="legend-item"><span class="dot" style="background: #f17024;"></span> 资产</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <svg viewBox="0 0 400 150" class="asset-chart">
+                        <defs>
+                            <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f17024;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#f17024;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M 0 120 Q 50 100, 100 80 T 200 60 T 300 40 T 400 20" 
+                              fill="none" stroke="#f17024" stroke-width="2"/>
+                        <path d="M 0 120 Q 50 100, 100 80 T 200 60 T 300 40 T 400 20 L 400 150 L 0 150 Z" 
+                              fill="url(#chartGradient)"/>
+                        <circle cx="400" cy="20" r="4" fill="#f17024"/>
+                    </svg>
+                    <div class="chart-labels">
+                        <span>10-02</span>
+                        <span>10-03</span>
+                        <span>10-04</span>
+                        <span>10-05</span>
+                        <span>10-06</span>
+                        <span>10-07</span>
+                        <span>10-08</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asset Breakdown -->
+        <section class="asset-breakdown">
+            <div class="breakdown-card">
+                <div class="breakdown-icon">💵</div>
+                <div class="breakdown-label">可用</div>
+                <div class="breakdown-value">1,000 USDT</div>
+            </div>
+            <div class="breakdown-card">
+                <div class="breakdown-icon" style="background: linear-gradient(135deg, #5bfda0, #00d4aa);">🔒</div>
+                <div class="breakdown-label">冻结</div>
+                <div class="breakdown-value">1,000 USDT</div>
+            </div>
+            <div class="breakdown-card">
+                <div class="breakdown-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">⏳</div>
+                <div class="breakdown-label">待释放</div>
+                <div class="breakdown-value">1,000 USDT</div>
+            </div>
+            <div class="breakdown-card">
+                <div class="breakdown-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">🎨</div>
+                <div class="breakdown-label">NFT 价值</div>
+                <div class="breakdown-value">1,000 USDT</div>
+            </div>
+        </section>
+
+        <!-- Two Column Layout -->
+        <div class="two-column-layout">
+            <!-- Earnings Section -->
+            <section class="earnings-section">
+                <h2>我的收益</div>
+                
+                <div class="earnings-card">
+                    <div class="earnings-row total">
+                        <span>总收益</span>
+                        <span class="earnings-value">293,883.98 USDT</span>
+                    </div>
+                    
+                    <div class="earnings-row highlight">
+                        <div class="earnings-icon">📈</div>
+                        <span>今日收益</span>
+                        <span class="earnings-value">293,883.98 USDT</span>
+                    </div>
+                    
+                    <div class="earnings-row">
+                        <div class="earnings-icon">📅</div>
+                        <span>今日预约收益</span>
+                        <span class="earnings-value">293,883.98 USDT</span>
+                    </div>
+                    
+                    <div class="earnings-row">
+                        <div class="earnings-icon">🔐</div>
+                        <span>今日质押收益</span>
+                        <span class="earnings-value">293,883.98 USDT</span>
+                    </div>
+                    
+                    <div class="earnings-row">
+                        <div class="earnings-icon">👥</div>
+                        <span>今日团队收益</span>
+                        <span class="earnings-value">293,883.98 USDT</span>
+                    </div>
+                    
+                    <button class="btn btn-outline earnings-btn">收益记录</button>
+                </div>
+            </section>
+
+            <!-- Currency List -->
+            <section class="currency-section">
+                <h2>币种列表</h2>
+                
+                <div class="currency-list">
+                    <div class="currency-item">
+                        <div class="currency-info">
+                            <div class="currency-icon" style="background: linear-gradient(135deg, #26a17b, #2ecc71);">₮</div>
+                            <div class="currency-details">
+                                <div class="currency-name">USDT</div>
+                                <div class="currency-meta">
+                                    <span>可用 28,388.98</span>
+                                    <span>冻结中 28,388.98</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="currency-amount">293,883.98</div>
+                    </div>
+                    
+                    <div class="currency-item">
+                        <div class="currency-info">
+                            <div class="currency-icon" style="background: linear-gradient(135deg, #f7931a, #ffae42);">₿</div>
+                            <div class="currency-details">
+                                <div class="currency-name">BTC</div>
+                                <div class="currency-meta">
+                                    <span>可用 28,388.98</span>
+                                    <span>冻结中 28,388.98</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="currency-amount">293,883.98</div>
+                    </div>
+                    
+                    <div class="currency-item">
+                        <div class="currency-info">
+                            <div class="currency-icon" style="background: linear-gradient(135deg, #627eea, #8c9eff);">Ξ</div>
+                            <div class="currency-details">
+                                <div class="currency-name">ETH</div>
+                                <div class="currency-meta">
+                                    <span>可用 28,388.98</span>
+                                    <span>冻结中 28,388.92</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="currency-amount">293,883.98</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Transaction History -->
+        <section class="transaction-section">
+            <h2>最近交易记录</h2>
+            
+            <div class="transaction-table">
+                <div class="table-header">
+                    <span>时间</span>
+                    <span>类型</span>
+                    <span>币种</span>
+                    <span>数量</span>
+                    <span>余额</span>
+                </div>
+                
+                <div class="table-row">
+                    <span>2025-10-02 10:00:00</span>
+                    <span>充值</span>
+                    <span>USDT</span>
+                    <span class="positive">+234.34</span>
+                    <span>293,933.45</span>
+                </div>
+                
+                <div class="table-row">
+                    <span>2025-10-02 10:00:00</span>
+                    <span>提现</span>
+                    <span>USDT</span>
+                    <span class="negative">-234.34</span>
+                    <span>293,933.45</span>
+                </div>
+                
+                <div class="table-row">
+                    <span>2025-10-02 10:00:00</span>
+                    <span>预约</span>
+                    <span>USDT</span>
+                    <span class="negative">-234.34</span>
+                    <span>293,933.45</span>
+                </div>
+                
+                <div class="table-row">
+                    <span>2025-10-02 10:00:00</span>
+                    <span>购买NFT</span>
+                    <span>USDT</span>
+                    <span class="negative">-234.34</span>
+                    <span>293,933.45</span>
+                </div>
+                
+                <div class="table-row">
+                    <span>2025-10-02 10:00:00</span>
+                    <span>预约收益</span>
+                    <span>USDT</span>
+                    <span class="positive">+234.34</span>
+                    <span>293,933.45</span>
+                </div>
+            </div>
+            
+            <div class="load-more">
+                <button class="btn btn-outline">查看更多 →</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2026 NFTOwer-4. All rights reserved.</p>
+            <p>Powered by Web3 Technology</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for chart
+        document.addEventListener('DOMContentLoaded', () => {
+            const chart = document.querySelector('.asset-chart path:first-child');
+            if (chart) {
+                const length = chart.getTotalLength();
+                chart.style.strokeDasharray = length;
+                chart.style.strokeDashoffset = length;
+                chart.style.animation = 'drawChart 2s ease forwards';
+            }
+        });
+    </script>
+</body>
+</html>

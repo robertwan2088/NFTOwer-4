@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质押中心 | NFTOwer-4</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">7</div>
+                NFTOwer-4
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="market.html">市场</a></li>
+                <li><a href="stake.html" class="active">质押</a></li>
+                <li><a href="assets.html">资产中心</a></li>
+                <li><a href="profile.html">个人中心</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline">连接钱包</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1>NFT质押中心</h1>
+                <p>质押你的NFT资产，获取稳定收益</p>
+            </div>
+            <div class="vip-badge">
+                <span>👑</span> VIP1
+            </div>
+        </div>
+
+        <!-- Stats Overview -->
+        <section class="stake-stats">
+            <div class="stat-card-large">
+                <div class="stat-label">质押总额</div>
+                <div class="stat-value-large">1,000 USDT</div>
+            </div>
+            <div class="stat-card-large">
+                <div class="stat-label">可用余额</div>
+                <div class="stat-value-large">1,000 USDT</div>
+            </div>
+            <div class="stat-card-large">
+                <div class="stat-label">质押NFT数量</div>
+                <div class="stat-value-large">5</div>
+            </div>
+            <div class="stat-card-large highlight">
+                <div class="stat-label">质押收益</div>
+                <div class="stat-value-large gradient-text">1,000 USDT</div>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="stake-actions">
+            <button class="btn btn-primary">➕ 质押NFT</button>
+            <button class="btn btn-outline">🎨 我的NFT</button>
+            <button class="btn btn-outline">📋 质押记录</button>
+        </section>
+
+        <!-- Staking Pools Tabs -->
+        <section class="staking-tabs">
+            <button class="staking-tab active">自由区</button>
+            <button class="staking-tab">专区</button>
+        </section>
+
+        <!-- Staking Pools Grid -->
+        <section class="staking-pools">
+            <div class="pool-card featured">
+                <div class="pool-banner">
+                    <div class="pool-banner-bg" style="background: linear-gradient(135deg, #f17024, #ff6b6b);"></div>
+                    <div class="pool-level">LV1-LV6</div>
+                </div>
+                <div class="pool-info">
+                    <h3>自由区 1</h3>
+                    
+                    <div class="pool-details">
+                        <div class="pool-row">
+                            <span>质押金额</span>
+                            <span>50-1000 USDT</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>收益率</span>
+                            <span class="highlight-text">1.5-3%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>手续费</span>
+                            <span>1%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>A级用户</span>
+                            <span>2/5</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>B+C级用户</span>
+                            <span>5/10</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary pool-btn">前往质押</button>
+                </div>
+            </div>
+
+            <div class="pool-card">
+                <div class="pool-banner">
+                    <div class="pool-banner-bg" style="background: linear-gradient(135deg, #5bfda0, #00d4aa);"></div>
+                    <div class="pool-level">LV1-LV6</div>
+                </div>
+                <div class="pool-info">
+                    <h3>自由区 2</h3>
+                    
+                    <div class="pool-details">
+                        <div class="pool-row">
+                            <span>质押金额</span>
+                            <span>50-1000 USDT</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>收益率</span>
+                            <span class="highlight-text">1.5-3%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>手续费</span>
+                            <span>1%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>A级用户</span>
+                            <span>2/5</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>B+C级用户</span>
+                            <span>5/10</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline pool-btn" disabled>未解锁</button>
+                </div>
+            </div>
+
+            <div class="pool-card">
+                <div class="pool-banner">
+                    <div class="pool-banner-bg" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                    <div class="pool-level">LV1-LV6</div>
+                </div>
+                <div class="pool-info">
+                    <h3>自由区 3</h3>
+                    
+                    <div class="pool-details">
+                        <div class="pool-row">
+                            <span>质押金额</span>
+                            <span>50-1000 USDT</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>收益率</span>
+                            <span class="highlight-text">1.5-3%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>手续费</span>
+                            <span>1%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>A级用户</span>
+                            <span>2/5</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>B+C级用户</span>
+                            <span>5/10</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline pool-btn" disabled>即将开启</button>
+                </div>
+            </div>
+
+            <div class="pool-card">
+                <div class="pool-banner">
+                    <div class="pool-banner-bg" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                    <div class="pool-level">LV1-LV6</div>
+                </div>
+                <div class="pool-info">
+                    <h3>自由区 4</h3>
+                    
+                    <div class="pool-details">
+                        <div class="pool-row">
+                            <span>质押金额</span>
+                            <span>50-1000 USDT</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>收益率</span>
+                            <span class="highlight-text">1.5-3%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>手续费</span>
+                            <span>1%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>A级用户</span>
+                            <span>2/5</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>B+C级用户</span>
+                            <span>5/10</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline pool-btn" disabled>即将开启</button>
+                </div>
+            </div>
+
+            <div class="pool-card">
+                <div class="pool-banner">
+                    <div class="pool-banner-bg" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+                    <div class="pool-level">LV1-LV6</div>
+                </div>
+                <div class="pool-info">
+                    <h3>自由区 5</h3>
+                    
+                    <div class="pool-details">
+                        <div class="pool-row">
+                            <span>质押金额</span>
+                            <span>50-1000 USDT</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>收益率</span>
+                            <span class="highlight-text">1.5-3%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>手续费</span>
+                            <span>1%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>A级用户</span>
+                            <span>2/5</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>B+C级用户</span>
+                            <span>5/10</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline pool-btn" disabled>即将开启</button>
+                </div>
+            </div>
+
+            <div class="pool-card">
+                <div class="pool-banner">
+                    <div class="pool-banner-bg" style="background: linear-gradient(135deg, #fa709a, #fee140);"></div>
+                    <div class="pool-level">LV1-LV6</div>
+                </div>
+                <div class="pool-info">
+                    <h3>自由区 6</h3>
+                    
+                    <div class="pool-details">
+                        <div class="pool-row">
+                            <span>质押金额</span>
+                            <span>50-1000 USDT</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>收益率</span>
+                            <span class="highlight-text">1.5-3%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>手续费</span>
+                            <span>1%</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>A级用户</span>
+                            <span>2/5</span>
+                        </div>
+                        <div class="pool-row">
+                            <span>B+C级用户</span>
+                            <span>5/10</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline pool-btn" disabled>即将开启</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="load-more">
+            <button class="btn btn-outline">查看更多</button>
+        </div>
+
+        <!-- Features Section -->
+        <section class="stake-features">
+            <h2>全球顶尖的NFT交易市场</h2>
+            <p class="section-subtitle">提供安全、高效的交易体验，让你轻松进入数字资产世界</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>安全保障</h3>
+                    <p>采用区块链技术和加密算法，确保你的NFT资产安全无忧。多重验证机制保护您的账户安全。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #5bfda0, #00d4aa);">⚡</div>
+                    <h3>闪电交易</h3>
+                    <p>采用优化的智能合约，确保NFT交易快速完成，让你不错过任何投资机会。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">👥</div>
+                    <h3>社区支持</h3>
+                    <p>加入我们活跃的NFT创作者和收藏家社区，分享经验，获取最新资讯和市场动态。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Stake -->
+        <section class="how-to-stake">
+            <h2>如何质押NFT</h2>
+            <p class="section-subtitle">只需要简单几步，即可质押NFT</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🛒</div>
+                    <h3>购买NFT</h3>
+                    <p>购买喜欢的NFT</p>
+                </div>
+                
+                <div class="step-arrow">→</div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🔐</div>
+                    <h3>质押NFT</h3>
+                    <p>在我的页面找到质押区NFT，选择"质押"</p>
+                </div>
+                
+                <div class="step-arrow">→</div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">💰</div>
+                    <h3>获得收益</h3>
+                    <p>质押成功后可以获得质押收益</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2026 NFTOwer-4. All rights reserved.</p>
+            <p>Powered by Web3 Technology</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.staking-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.staking-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

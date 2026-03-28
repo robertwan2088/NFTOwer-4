@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>市场 | NFTOwer-4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #f17024;
+            --primary-orange-light: #ff8c42;
+            --primary-orange-dark: #d65a12;
+            --accent-green: #d8ef4f;
+            --accent-green-light: #5bfda0;
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-card-hover: rgba(255, 255, 255, 0.06);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --gradient-hero: linear-gradient(135deg, #f17024 0%, #ff6b6b 50%, #d8ef4f 100%);
+            --gradient-btn: linear-gradient(90deg, #d8ef4f, #5bfda0);
+            --gradient-card: linear-gradient(145deg, rgba(241, 112, 36, 0.1), rgba(216, 239, 79, 0.05));
+            --shadow-glow: 0 0 40px rgba(241, 112, 36, 0.3);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-gradient {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(241, 112, 36, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(216, 239, 79, 0.1) 0%, transparent 50%);
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(2%, 2%) rotate(1deg); }
+            66% { transform: translate(-1%, 1%) rotate(-1deg); }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 28px;
+            font-weight: 800;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-hero);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            -webkit-text-fill-color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-hero);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-orange);
+            background: rgba(241, 112, 36, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--gradient-btn);
+            color: #000;
+            box-shadow: 0 4px 20px rgba(216, 239, 79, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(216, 239, 79, 0.4);
+        }
+
+        .btn-orange {
+            background: var(--primary-orange);
+            color: white;
+            box-shadow: 0 4px 20px rgba(241, 112, 36, 0.4);
+        }
+
+        .btn-orange:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(241, 112, 36, 0.5);
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 120px 40px 60px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .filter-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .filter-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .filter-option:hover {
+            color: var(--text-primary);
+        }
+
+        .filter-option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary-orange);
+        }
+
+        .price-range {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .price-input {
+            flex: 1;
+            padding: 12px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .price-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .filter-btn {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        /* Content Area */
+        .content-area {
+            min-height: 100vh;
+        }
+
+        .page-header {
+            margin-bottom: 32px;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+        }
+
+        /* Banner */
+        .market-banner {
+            background: var(--gradient-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .market-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(241, 112, 36, 0.1));
+        }
+
+        .banner-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .banner-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Search and Filter Bar */
+        .toolbar {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px 16px 52px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+        }
+
+        .search-box::before {
+            content: '🔍';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+        }
+
+        .filter-tab {
+            padding: 14px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-tab:hover, .filter-tab.active {
+            background: var(--primary-orange);
+            border-color: var(--primary-orange);
+            color: white;
+        }
+
+        .sort-dropdown {
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 14px;
+            cursor: pointer;
+            min-width: 160px;
+        }
+
+        /* NFT Grid */
+        .nft-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .nft-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .nft-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-orange);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .nft-image {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+
+        .nft-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .nft-card:hover .nft-image-placeholder {
+            transform: scale(1.1);
+        }
+
+        .nft-like {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .nft-like:hover {
+            background: var(--primary-orange);
+        }
+
+        .nft-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 6px 12px;
+            background: var(--primary-orange);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .nft-details {
+            padding: 20px;
+        }
+
+        .nft-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .nft-collection {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .nft-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nft-price {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nft-price-label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .nft-price-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-orange);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nft-count {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 48px;
+        }
+
+        .page-btn {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: var(--primary-orange);
+            border-color: var(--primary-orange);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 40px 40px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .footer-bottom {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .nft-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nft-grid {
+                grid-template-columns: 1fr;
+            }
+            .toolbar {
+                flex-direction: column;
+            }
+            .search-box {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"><div class="bg-gradient"></div></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">7</div>
+                NFTOwer-4
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="market.html" class="active">市场</a></li>
+                <li><a href="assets.html">资产中心</a></li>
+                <li><a href="profile.html">个人中心</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline">连接钱包</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="filter-section">
+                <div class="filter-title">状态</div>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" checked>
+                        <span>全部</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox">
+                        <span>购买中</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox">
+                        <span>拍卖中</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox">
+                        <span>新上架</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-title">价格范围</div>
+                <div class="price-range">
+                    <input type="text" class="price-input" placeholder="最低价">
+                    <input type="text" class="price-input" placeholder="最高价">
+                </div>
+                <button class="btn btn-primary filter-btn">应用筛选</button>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-title">合集</div>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox">
+                        <span>DXNK Collection</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox">
+                        <span>Cosmic Dreams</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox">
+                        <span>Pixel Warriors</span>
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox">
+                        <span>Green Earth</span>
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <div class="page-header">
+                <h1>探索 NFT 市场</h1>
+                <p>发现并收藏独特的数字艺术品</p>
+            </div>
+
+            <div class="market-banner">
+                <div class="banner-content">
+                    <h2>本周精选合集</h2>
+                    <p>探索 DXNK Collection，发现最具潜力的数字艺术品</p>
+                    <button class="btn btn-orange">查看详情</button>
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <div class="search-box">
+                    <input type="text" placeholder="搜索 NFT、合集或创作者...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-tab active">全部</button>
+                    <button class="filter-tab">热门</button>
+                    <button class="filter-tab">关注</button>
+                </div>
+                <select class="sort-dropdown">
+                    <option>最新上架</option>
+                    <option>价格从低到高</option>
+                    <option>价格从高到低</option>
+                    <option>最受欢迎</option>
+                </select>
+            </div>
+
+            <div class="nft-grid">
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #f17024, #ff6b6b);">🎨</div>
+                        <div class="nft-like">♡</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">DXNK3 #8234</div>
+                        <div class="nft-collection">DXNK Collection</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">地板价</span>
+                                <span class="nft-price-value">⚡ 10 USDT</span>
+                            </div>
+                            <div class="nft-count">10,100 件</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #5bfda0, #00d4aa);">🌿</div>
+                        <div class="nft-like">♡</div>
+                        <div class="nft-tag">热门</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Green Earth #42</div>
+                        <div class="nft-collection">Green Earth NFT</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">地板价</span>
+                                <span class="nft-price-value">⚡ 25 USDT</span>
+                            </div>
+                            <div class="nft-count">5,300 件</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #667eea, #764ba2);">🌌</div>
+                        <div class="nft-like">♡</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Cosmic #1289</div>
+                        <div class="nft-collection">Cosmic Dreams</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">地板价</span>
+                                <span class="nft-price-value">⚡ 1.8 ETH</span>
+                            </div>
+                            <div class="nft-count">8,700 件</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #f093fb, #f5576c);">👾</div>
+                        <div class="nft-like">♡</div>
+                        <div class="nft-tag">新</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Pixel Warrior #999</div>
+                        <div class="nft-collection">Pixel Warriors</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">地板价</span>
+                                <span class="nft-price-value">⚡ 0.8 ETH</span>
+                            </div>
+                            <div class="nft-count">10,000 件</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">🌊</div>
+                        <div class="nft-like">♡</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Ocean Blue #77</div>
+                        <div class="nft-collection">Blue Collection</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">地板价</span>
+                                <span class="nft-price-value">⚡ 3.2 ETH</span>
+                            </div>
+                            <div class="nft-count">2,500 件</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #fa709a, #fee140);">🌅</div>
+                        <div class="nft-like">♡</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Sunset #2024</div>
+                        <div class="nft-collection">Nature Series</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">地板价</span>
+                                <span class="nft-price-value">⚡ 1.5 ETH</span>
+                            </div>
+                            <div class="nft-count">3,200 件</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">🎭</div>
+                        <div class="nft-like">♡</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Pastel Dream #42</div>
+                        <div class="nft-collection">Pastel Collection</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">地板价</span>
+                                <span class="nft-price-value">⚡ 0.6 ETH</span>
+                            </div>
+                            <div class="nft-count">1,800 件</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">🌟</div>
+                        <div class="nft-like">♡</div>
+                        <div class="nft-tag">热门</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Golden Hour #88</div>
+                        <div class="nft-collection">Time Collection</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">地板价</span>
+                                <span class="nft-price-value">⚡ 2.1 ETH</span>
+                            </div>
+                            <div class="nft-count">4,500 件</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">🔥</div>
+                        <div class="nft-like">♡</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Fire Phoenix #001</div>
+                        <div class="nft-collection">Mythical Beasts</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">地板价</span>
+                                <span class="nft-price-value">⚡ 5.5 ETH</span>
+                            </div>
+                            <div class="nft-count">888 件</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn"><</button>
+                <button class="page-btn"></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">...</button>
+                <button class="page-btn">10</button>
+                <button class="page-btn">>>/button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2026 NFTOwer-4. All rights reserved.</p>
+            <p>Powered by Web3 Technology</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.nft-like').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                btn.style.background = btn.style.background === 'rgb(241, 112, 36)' ? 'rgba(0, 0, 0, 0.5)' : '#f17024';
+                btn.innerHTML = btn.innerHTML === '♥' ? '♡' : '♥';
+            });
+        });
+
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

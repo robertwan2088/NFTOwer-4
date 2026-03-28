@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心 | NFTOwer-4</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">7</div>
+                NFTOwer-4
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="market.html">市场</a></li>
+                <li><a href="assets.html">资产中心</a></li>
+                <li><a href="profile.html" class="active">个人中心</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline">连接钱包</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Profile Header -->
+        <section class="profile-header">
+            <div class="profile-cover">
+                <div class="cover-gradient"></div>
+            </div>
+            
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <div class="avatar-placeholder">👤</div>
+                    <div class="verified-badge">✓</div>
+                </div>
+                
+                <div class="profile-details">
+                    <h1>CryptoCollector</h1>
+                    <div class="profile-handle">@cryptocollector_7</div>
+                    
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <span class="stat-number">24</span>
+                            <span class="stat-label">藏品</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-number">1.2K</span>
+                            <span class="stat-label">关注者</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-number">86</span>
+                            <span class="stat-label">关注中</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">交易</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions">
+                    <button class="btn btn-outline">✏️ 编辑资料</button>
+                    <button class="btn btn-primary">⚙️ 设置</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Tabs -->
+        <section class="profile-tabs">
+            <button class="profile-tab active">已拥有</button>
+            <button class="profile-tab">创建的</button>
+            <button class="profile-tab">喜欢的</button>
+            <button class="profile-tab">活动</button>
+            <button class="profile-tab">优惠</button>
+        </section>
+
+        <!-- Owned NFTs Grid -->
+        <section class="owned-nfts">
+            <div class="section-header-row">
+                <h2>我的 NFT 藏品</h2>
+                <div class="view-toggle">
+                    <button class="toggle-btn active">⊞</button>
+                    <button class="toggle-btn">☰</button>
+                </div>
+            </div>
+
+            <div class="nft-grid">
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #f17024, #ff6b6b);">🎨</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">DXNK3 #8234</div>
+                        <div class="nft-collection">DXNK Collection</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">购买价格</span>
+                                <span class="nft-price-value">⚡ 10 USDT</span>
+                            </div>
+                            <div class="nft-count">当前价值 12 USDT</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #5bfda0, #00d4aa);">🌿</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Green Earth #42</div>
+                        <div class="nft-collection">Green Earth NFT</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">购买价格</span>
+                                <span class="nft-price-value">⚡ 25 USDT</span>
+                            </div>
+                            <div class="nft-count">当前价值 32 USDT</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #667eea, #764ba2);">🌌</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Cosmic #1289</div>
+                        <div class="nft-collection">Cosmic Dreams</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">购买价格</span>
+                                <span class="nft-price-value">⚡ 1.8 ETH</span>
+                            </div>
+                            <div class="nft-count">当前价值 2.2 ETH</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #f093fb, #f5576c);">👾</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Pixel Warrior #999</div>
+                        <div class="nft-collection">Pixel Warriors</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">购买价格</span>
+                                <span class="nft-price-value">⚡ 0.8 ETH</span>
+                            </div>
+                            <div class="nft-count">当前价值 1.1 ETH</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">🌊</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Ocean Blue #77</div>
+                        <div class="nft-collection">Blue Collection</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">购买价格</span>
+                                <span class="nft-price-value">⚡ 3.2 ETH</span>
+                            </div>
+                            <div class="nft-count">当前价值 4.5 ETH</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nft-card">
+                    <div class="nft-image">
+                        <div class="nft-image-placeholder" style="background: linear-gradient(135deg, #fa709a, #fee140);">🌅</div>
+                    </div>
+                    <div class="nft-details">
+                        <div class="nft-name">Sunset #2024</div>
+                        <div class="nft-collection">Nature Series</div>
+                        <div class="nft-meta">
+                            <div class="nft-price">
+                                <span class="nft-price-label">购买价格</span>
+                                <span class="nft-price-value">⚡ 1.5 ETH</span>
+                            </div>
+                            <div class="nft-count">当前价值 1.8 ETH</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn"><</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">...</button>
+                <button class="page-btn">>>/button>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <h2>快捷操作</h2>
+            
+            <div class="actions-grid">
+                <a href="market.html" class="action-card">
+                    <div class="action-icon">🛒</div>
+                    <div class="action-title">购买 NFT</div>
+                    <div class="action-desc">浏览市场并购买您喜欢的藏品</div>
+                </a>
+
+                <a href="#" class="action-card">
+                    <div class="action-icon" style="background: linear-gradient(135deg, #5bfda0, #00d4aa);">🏷️</div>
+                    <div class="action-title">出售 NFT</div>
+                    <div class="action-desc">将您的藏品挂牌出售</div>
+                </a>
+
+                <a href="#" class="action-card">
+                    <div class="action-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">🎁</div>
+                    <div class="action-title">转账</div>
+                    <div class="action-desc">向其他用户转账 NFT</div>
+                </a>
+
+                <a href="#" class="action-card">
+                    <div class="action-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">📊</div>
+                    <div class="action-title">创建合集</div>
+                    <div class="action-desc">发布您自己的 NFT 合集</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2026 NFTOwer-4. All rights reserved.</p>
+            <p>Powered by Web3 Technology</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.profile-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.profile-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
